@@ -1,0 +1,13 @@
+.post{
+    display: grid;
+    grid-template-columns: 1fr 14fr ;
+    padding: 10px 0 0 0;
+}
+
+.post img{
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    margin:0 0 0 5px;
+}
+

@@ -1,23 +1,29 @@
-import logo from './logo.svg';
+import React from 'react'
 import './App.css';
+import Profile from './Components/Content/Profile/Profile';
+import Header from './Components/Header/Header';
+import Navigation from './Components/Navigation/Navigation';
+import {Route,Routes} from 'react-router-dom' 
+import Message from './Components/Content/Message/Message';
+import Music from './Components/Content/Music/Music';
+import News from './Components/Content/News/News';
+import Videos from './Components/Content/Videos/Videos';
 
-function App() {
+function App(props) {
+  console.log(props.children)
+  debugger
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Header/>
+        <Navigation/>
+        <Routes>
+          <Route path="/Profile*" element={<Profile state={props.state.Profile} dispatch={props.dispatch} Привет />}/>
+          <Route path="/Message*" element={<Message state={props.state.Message} dispatch={props.dispatch} />}/>
+          <Route path="/Music*" element={<Music/>}/>
+          <Route path="/News*" element={<News/>}/>
+          <Route path="/Videos*" element={<Videos/>}/>
+        </Routes>
+      
     </div>
   );
 }

@@ -1,0 +1,12 @@
+.myposts{
+    margin:20px 0 0 0;
+}
+
+.layout textarea{
+    height: 40px;
+    width: 500px;
+}
+.layout button{
+    height: 20px;
+    width: 70px;
+}
